@@ -358,9 +358,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="date_received">Date Received:</label>
             <input type="text" name="date_received" value="<?php echo htmlspecialchars($user['date_received']); ?>" required>
             <br>
-            <label for="status">Status:</label>
-            <input type="text" name="status" value="<?php echo htmlspecialchars($user['status']); ?>" required>
-            <br>
             <input type="submit" value="Update">
         </form>
     </div>
