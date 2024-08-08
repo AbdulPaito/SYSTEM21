@@ -91,51 +91,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'];
 
     $update_query = "
-        UPDATE registration SET
-            profile_image = '$profile_image',
-            uli_number = '$uli_number',
-            entry_date = '$entry_date',
-            last_name = '$last_name',
-            first_name = '$first_name',
-            middle_name = '$middle_name',
-            address_number_street = '$address_number_street',
-            address_barangay = '$address_barangay',
-            address_district = '$address_district',
-            address_city_municipality = '$address_city_municipality',
-            address_province = '$address_province',
-            address_region = '$address_region',
-            email_facebook = '$email_facebook',
-            contact_no = '$contact_no',
-            nationality = '$nationality',
-            sex = '$sex',
-            civil_status = '$civil_status',
-            employment_status = '$employment_status',
-            month_of_birth = '$month_of_birth',
-            day_of_birth = '$day_of_birth',
-            year_of_birth = '$year_of_birth',
-            age = '$age',
-            birthplace_city_municipality = '$birthplace_city_municipality',
-            birthplace_province = '$birthplace_province',
-            birthplace_region = '$birthplace_region',
-            educational_attainment = '$educational_attainment',
-            parent_guardian_name = '$parent_guardian_name',
-            parent_guardian_address = '$parent_guardian_address',
-            classification = '$classification',
-            disability = '$disability',
-            cause_of_disability = '$cause_of_disability',
-            taken_ncae = '$taken_ncae',
-            where_ncae = '$where_ncae',
-            when_ncae = '$when_ncae',
-            qualification = '$qualification',
-            scholarship = '$scholarship',
-            privacy_disclaimer = '$privacy_disclaimer',
-            applicant_signature = '$applicant_signature',
-            date_accomplished = '$date_accomplished',
-            registrar_signature = '$registrar_signature',
-            date_received = '$date_received',
-            status = '$status'
-        WHERE id = $id
-    ";
+    UPDATE users SET
+        profile_image = '$profile_image',
+        uli_number = '$uli_number',
+        entry_date = '$entry_date',
+        last_name = '$last_name',
+        first_name = '$first_name',
+        middle_name = '$middle_name',
+        address_number_street = '$address_number_street',
+        address_barangay = '$address_barangay',
+        address_district = '$address_district',
+        address_city_municipality = '$address_city_municipality',
+        address_province = '$address_province',
+        address_region = '$address_region',
+        email_facebook = '$email_facebook',
+        contact_no = '$contact_no',
+        nationality = '$nationality',
+        sex = '$sex',
+        civil_status = '$civil_status',
+        employment_status = '$employment_status',
+        month_of_birth = '$month_of_birth',
+        day_of_birth = '$day_of_birth',
+        year_of_birth = '$year_of_birth',
+        age = '$age',
+        birthplace_city_municipality = '$birthplace_city_municipality',
+        birthplace_province = '$birthplace_province',
+        birthplace_region = '$birthplace_region',
+        educational_attainment = '$educational_attainment',
+        parent_guardian_name = '$parent_guardian_name',
+        parent_guardian_address = '$parent_guardian_address',
+        classification = '$classification',
+        disability = '$disability',
+        cause_of_disability = '$cause_of_disability',
+        taken_ncae = '$taken_ncae',
+        where_ncae = '$where_ncae',
+        when_ncae = '$when_ncae',
+        qualification = '$qualification',
+        scholarship = '$scholarship',
+        privacy_disclaimer = '$privacy_disclaimer',
+        applicant_signature = '$applicant_signature',
+        date_accomplished = '$date_accomplished',
+        registrar_signature = '$registrar_signature',
+        date_received = '$date_received',
+        status = '$status'
+    WHERE id = $id
+";
 
     $update_result = mysqli_query($connection, $update_query);
 
@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Update failed: " . mysqli_error($connection));
     } else {
         echo "Record updated successfully!";
-        header('Location: Dashboard.php');
+        header('Location: login.php');
         exit;
     }
 }
