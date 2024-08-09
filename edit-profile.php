@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $status = $_POST['status'];
 
     $update_query = "
-        UPDATE registration SET
+        UPDATE users SET
             profile_image = '$profile_image',
             uli_number = '$uli_number',
             entry_date = '$entry_date',
@@ -358,10 +358,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="image-container">
                 <img src="<?php echo htmlspecialchars($user['imageUpload']); ?>" alt="Profile Image">
             </div>
-            <br>
-            <label for="status">Status:</label>
-            <input type="text" name="status" value="<?php echo htmlspecialchars($user['status']); ?>" required>
-            <br>
+           
             <input type="submit" name="update" value="Update">
         </form>
     </div>
